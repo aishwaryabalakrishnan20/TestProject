@@ -1,0 +1,36 @@
+version: "2.1"
+orbs:
+  win: circleci/windows@2.4
+jobs:
+  build:
+    executor:
+      name: win/default
+      size: medium
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: npm ci
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # we need to install CircleCI CLI tool
+      # to run the "manual" tests
+      - run: yarn run cy:run
+      - store_artifacts:
+          path: test/logs
+      - store_artifacts:
+         path: test/videos
+      - store_artifacts:
+          path: test/screenshots
+      - store_test_results:
+         path: reports

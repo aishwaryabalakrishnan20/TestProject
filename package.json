@@ -1,0 +1,34 @@
+{
+  "name": "yarapackagedesign-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  },
+  "devDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "@types/cypress-cucumber-preprocessor": "^4.0.0",
+    "@types/node": "^16.0.1",
+    "cypress": "^8.2.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
+    "cypress-xpath": "^1.6.1",
+    "typescript": "^4.3.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "test/support/step_definitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "Reports-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}

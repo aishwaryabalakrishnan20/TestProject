@@ -1,0 +1,10 @@
+{
+  "cucumberautocomplete.steps": ["test/support/step_definitions/*.ts"],
+  "cucumberautocomplete.strictGherkinCompletion": false,
+  "cucumberautocomplete.onTypeFormat": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  }
+}

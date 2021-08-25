@@ -1,0 +1,20 @@
+{
+    "baseUrl": "https://agrocore-admin-polaris.stage.emea.yaradigitallabs.io",
+    "env": {
+        "email": "kavitha.elumalai@yara.com",
+        "password": "Kavitha@123",
+        "graphqlUrl":"https://polaris-axial-gateway.stage.emea.yaradigitallabs.io/"
+    },
+    "defaultCommandTimeout": 6000,
+    "pageLoadTimeout":100000,
+    "integrationFolder": "test/specs",
+    "screenshotsFolder": "test/screenshots",
+    "videosFolder": "test/videos",
+    "fixturesFolder": "test/fixtures",
+    "supportFile": "test/support/index.ts",
+    "pluginsFile": "test/plugins/index.js",
+    "testFiles": "**/*.feature",
+    "experimentalRunEvents": true,
+    "chromeWebSecurity": false,
+    "includeShadowDom": true
+}
